@@ -1,0 +1,26 @@
+
+.menu-display {
+    width: 60%;
+    margin: 5% auto;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 2px 2px 2px black;
+    padding: 20px;
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+    ul {
+        padding-left: 0;
+        &:nth-child(1) {
+            text-align: left;
+        }
+        &:nth-child(2) {
+            text-align: right;
+        }
+        li {
+            list-style-type: none;
+        }
+    }
+
+}
