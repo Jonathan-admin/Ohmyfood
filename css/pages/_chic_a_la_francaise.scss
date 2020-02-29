@@ -1,0 +1,52 @@
+.menu-prev--menu2 {
+    background-color: rgb(255, 245, 254);
+    padding: 8vh 1vw;
+    header {
+        h2 {
+            background: -webkit-linear-gradient(300deg, rgb(217,131,48),rgb(143,90,255));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'menu2';
+            margin-bottom: 6vh;
+            
+        }
+    }
+    section {
+        margin-bottom: 30px;
+        font-family: DecaSerif;
+        font-size: 0.9em;
+        .menu-prev__heading {
+            img {
+                width: 30%;
+                height: 12px;
+                position: relative;
+                top: 22px;
+            }
+            & + div, & + ul {
+                width: 80%;
+                margin: auto;
+            }
+            & + ul {
+                margin-top: 15px;
+            }
+        }
+        ul {
+            li {
+                padding: 6px 0;
+            }
+        }
+        &:nth-of-type(1) {
+            color: rgb(198,116,18); 
+        }
+        &:nth-of-type(2) {
+            color: rgb(165,103,153); 
+        }
+        &:nth-of-type(3) {
+            color: rgb(110,76,204); 
+            ul {
+                text-align: left;
+            }
+        }
+    }
+}

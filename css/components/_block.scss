@@ -1,11 +1,11 @@
 
-.menu-display {
-    width: 60%;
-    margin: 5% auto;
+.menu-prev {
+    width: 30%;
+    min-width: 550px;
+    margin: auto;
     text-align: center;
     border: 1px solid black;
     box-shadow: 2px 2px 2px black;
-    padding: 20px;
     div {
         display: flex;
         justify-content: space-between;
@@ -22,5 +22,21 @@
             list-style-type: none;
         }
     }
+    .menu-prev__heading {
+        display: flex;
+    }
+}
 
+.next {
+    background-color: $background-color;
+    color: $text-color;
+    width: 15%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+    h2 {
+        margin: 0;
+    }
 }

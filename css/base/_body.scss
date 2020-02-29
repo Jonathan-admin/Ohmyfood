@@ -1,5 +1,18 @@
 body {
-    max-width: 50%;
-    height: 100%;
-    margin: auto;
+    margin: 0;
+    a {
+        text-decoration: none;
+    }
+    h1 a {
+        &:visited {
+            color: $text-color;
+        }
+    }
 }
+
+
+
+
+
+
+
