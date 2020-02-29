@@ -1,0 +1,128 @@
+.menu {
+    padding: 30px;
+    a {
+        ul {
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            list-style-type: none;
+            padding-inline-start: 0; 
+        }
+        &:nth-child(1) ul {
+            background:rgb(252,223,219);
+            li {
+                color: rgb(61,19,25);
+                &:nth-child(2) {
+                    font-family: 'Dear Joe 6';
+                }
+                &:nth-child(3) {
+                    font-family: 'Segoe Print Bold';
+                    Font-size: 2em;
+                }
+            }
+            i {
+                font-size: 3em;
+                background: -webkit-linear-gradient(left, rgb(245,95,98),rgb(246,145,106));
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }            
+        &:nth-child(2) ul {
+            background-color: rgb(255, 245, 254);
+            li {
+                &:nth-child(1) {
+                    background: -webkit-linear-gradient(300deg, rgb(217,131,48),rgb(143,90,255));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-family: 'menu2';
+                }
+                &:nth-child(2) {
+                    font-family: 'CandidaStdBold';
+                    Font-size: 2em;
+                    color: rgb(199,116,18);
+                    font-weight: bolder;
+                }
+            }
+        }
+        &:nth-child(3) ul {
+            background-color: rgb(237, 239, 239);
+            li {
+                &:nth-child(1) {
+                    background: -webkit-linear-gradient(300deg, rgb(2,41,221),rgb(78,169,251));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-family: 'DancingScript-Regular';
+                    font-weight: lighter;
+                    font-size: 1.5em;
+                }
+                &:nth-child(2) {
+                    font-family: 'segoeprint';
+                    Font-size: 2em;
+                    color: rgb(8,135,251);
+                    font-weight: bold;
+                }
+            }
+        }
+        &:nth-child(4) ul {
+            background-color: rgb(253, 255, 253);
+            li {
+                &:nth-child(1) {
+                    background: -webkit-linear-gradient(left, rgb(62,146,58),rgb(190,255,127));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-family: 'BreeshLight';
+                    font-size: 1.8em;
+                }
+                &:nth-child(2) {
+                    font-family: 'segoeprint';
+                    Font-size: 2em;
+                    color: rgb(114,191,86);
+                    font-weight: lighter;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px)
+{
+    .menu {
+        display: flex;
+        justify-content: space-around;
+        a {
+            width: 23%;
+            ul {
+                height: 70vh;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1023px)
+{
+    .menu {
+        display: grid;
+        grid-template-columns: 35% 35%;
+        grid-column-gap: 5%;
+        justify-content: center;
+        a {
+            ul {
+                height: 35vh;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .menu {
+        display: block;
+    }
+}

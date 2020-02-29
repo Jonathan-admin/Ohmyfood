@@ -1,0 +1,11 @@
+main > .next {
+    p {
+        width: 30%;
+        margin: auto;
+        text-align: center;
+        font-size: 1.3em;
+        color: $text-color;
+        background-color: $background-color;
+        padding: 7px 0;
+    }
+}

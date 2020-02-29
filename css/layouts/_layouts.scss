@@ -1,0 +1,27 @@
+body>header {
+    h1 {
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+    }
+}
+
+footer:not(.menu-prev__footer) {
+    position: fixed;
+    width: 100%;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    a {
+        padding: 10px;
+    }
+}
+
+body>header, footer:not(.menu-prev__footer) {
+    background-color: $background-color;
+}
+
+h1, footer:not(.menu-prev__footer) a {
+    color: $text-color;
+}

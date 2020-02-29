@@ -1,0 +1,49 @@
+.menu-prev--menu3 {
+    background-color: rgb(237, 239, 239);
+    padding: 4vh 1vw 15vh 1vw;
+    header {
+        h2 {
+            background: -webkit-linear-gradient(300deg, rgb(2,41,221),rgb(78,169,251));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'DancingScript-Regular';
+            margin-bottom: 4vh;
+            font-size: 3em;
+        }
+    }
+    section {
+        font-family: segoeprint;
+        font-size: 0.76em;
+        .menu-prev__heading {
+            img {
+                width: 30%;
+                height: 12px;
+                position: relative;
+                top: 21px;
+            }
+            h3 {
+                font-weight: unset;
+            }
+            & + div, & + ul {
+                width: 82%;
+                margin: auto;
+            }
+        }
+        ul {
+            &:nth-child(even) {
+                position: relative;
+                top: -5px;
+            }
+            &:nth-child(even) {
+                font-size: 1.2em;
+                & li:nth-child(2) {
+                    padding: 2px 0;
+                }
+            }
+            li {
+                padding: 6px 0;
+            }
+        }
+    }
+}
