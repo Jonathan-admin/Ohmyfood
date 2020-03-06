@@ -22,21 +22,28 @@
             list-style-type: none;
         }
     }
-    .menu-prev__heading {
+    &__heading {
         display: flex;
+        div {
+            display: block;
+            h3 {
+                &:hover + div {
+                    height: 0px;
+                    border-top: 3px solid rgb(2,40,221);
+                    transform: scale(1,1);
+                }
+            }
+        }
+        &--animationLine {
+            height: 3px;
+            position: relative;
+            top: -12px;
+            transform: scale(0,0.5);
+            transform-origin: left;
+            transition: transform 0.5s ease-in-out;
+        }
     }
 }
 
-.next {
-    background-color: $background-color;
-    color: $text-color;
-    width: 15%;
-    padding: 10px;
-    border-radius: 10px;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 100px;
-    h2 {
-        margin: 0;
-    }
-}
+
+

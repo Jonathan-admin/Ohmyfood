@@ -1,5 +1,5 @@
 .menu-prev--menu3 {
-    background-color: rgb(237, 239, 239);
+    background-color: $background-menu3-color;
     padding: 4vh 1vw 15vh 1vw;
     header {
         h2 {
@@ -24,6 +24,11 @@
             }
             h3 {
                 font-weight: unset;
+                &:hover + div {
+                    height: 0px;
+                    border-top: 3px solid rgb(2,40,221);
+                    transform: scale(1,1);
+                }
             }
             & + div, & + ul {
                 width: 82%;
