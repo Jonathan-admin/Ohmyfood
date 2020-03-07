@@ -13,6 +13,7 @@ footer:not(.menu-prev__footer) {
   display: flex;
   justify-content: space-between;
   bottom: 0;
+  z-index: 100;
 }
 footer:not(.menu-prev__footer) a {
   padding: 10px;
@@ -68,8 +69,12 @@ h1, footer:not(.menu-prev__footer) a {
 .menu {
   padding: 30px;
 }
-.menu a ul {
-  box-shadow: 1px 1px 30px #eaeaea;
+.menu__item {
+  position: relative;
+  z-index: 1;
+  box-shadow: 1px 1px 15px #eaeaea;
+}
+.menu__item ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,30 +82,51 @@ h1, footer:not(.menu-prev__footer) a {
   list-style-type: none;
   padding-inline-start: 0;
 }
-.menu a:nth-child(1) ul {
+.menu__item ul li {
+  transition: transform 0.6s cubic-bezier(0.86, -0.83, 0.07, 1.99);
+}
+.menu__item:hover ul > li {
+  transform: scale(1.1, 1.8);
+}
+.menu__item:hover::after {
+  opacity: 1;
+}
+.menu__item::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.685);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s cubic-bezier(1, 0.05, 0.36, 1);
+}
+.menu__item:nth-child(1) {
   background: #fcdfdb;
 }
-.menu a:nth-child(1) ul li {
+.menu__item:nth-child(1) li {
   color: #3d1319;
 }
-.menu a:nth-child(1) ul li:nth-child(2) {
+.menu__item:nth-child(1) li:nth-child(2) {
   font-family: "Dear Joe 6";
 }
-.menu a:nth-child(1) ul li:nth-child(3) {
+.menu__item:nth-child(1) li:nth-child(3) {
   font-family: "Segoe Print Bold";
   Font-size: 2em;
 }
-.menu a:nth-child(1) ul i {
+.menu__item:nth-child(1) i {
   font-size: 3em;
   background: -webkit-linear-gradient(left, #f55f62, #f6916a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu a:nth-child(2) ul {
+.menu__item:nth-child(2) {
   background-color: #fff5fe;
 }
-.menu a:nth-child(2) ul li:nth-child(1) {
+.menu__item:nth-child(2) li:nth-child(1) {
   background: -webkit-linear-gradient(300deg, #d98330, #8f5aff);
   background-clip: text;
   -webkit-background-clip: text;
@@ -108,39 +134,39 @@ h1, footer:not(.menu-prev__footer) a {
   font-family: "menu2";
   font-size: 0.8em;
 }
-.menu a:nth-child(2) ul li:nth-child(2) {
+.menu__item:nth-child(2) li:nth-child(2) {
   font-family: "CandidaStdBold";
   Font-size: 2em;
   color: #c77412;
   font-weight: bolder;
 }
-.menu a:nth-child(3) ul {
+.menu__item:nth-child(3) {
   background-color: #edefef;
 }
-.menu a:nth-child(3) ul li:nth-child(1) {
+.menu__item:nth-child(3) li:nth-child(1) {
   background: -webkit-linear-gradient(300deg, #0229dd, #4ea9fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "DancingScript-Regular";
   font-weight: lighter;
 }
-.menu a:nth-child(3) ul li:nth-child(2) {
+.menu__item:nth-child(3) li:nth-child(2) {
   font-family: "segoeprint";
   Font-size: 2em;
   color: #0887fb;
   font-weight: bold;
 }
-.menu a:nth-child(4) ul {
+.menu__item:nth-child(4) {
   background-color: #fdfffd;
 }
-.menu a:nth-child(4) ul li:nth-child(1) {
+.menu__item:nth-child(4) li:nth-child(1) {
   background: -webkit-linear-gradient(left, #3e923a, #beff7f);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "BreeshLight";
 }
-.menu a:nth-child(4) ul li:nth-child(2) {
+.menu__item:nth-child(4) li:nth-child(2) {
   font-family: "segoeprint";
   Font-size: 2em;
   color: #72bf56;
@@ -152,10 +178,10 @@ h1, footer:not(.menu-prev__footer) a {
     display: flex;
     justify-content: space-around;
   }
-  .menu a {
+  .menu__item {
     width: 23%;
   }
-  .menu a ul {
+  .menu__item ul {
     height: 70vh;
     min-height: 300px;
     font-size: 1.3vw;
@@ -164,11 +190,12 @@ h1, footer:not(.menu-prev__footer) a {
 @media screen and (min-width: 1024px) and (max-width: 1419px) {
   .menu {
     display: grid;
-    grid-template-columns: 35% 35%;
-    grid-column-gap: 5%;
+    grid-template-columns: 38% 38%;
+    grid-column-gap: 3vw;
+    grid-row-gap: 3vh;
     justify-content: center;
   }
-  .menu a ul {
+  .menu__item ul {
     height: 70vh;
     font-size: 2vw;
   }
@@ -177,10 +204,11 @@ h1, footer:not(.menu-prev__footer) a {
   .menu {
     display: grid;
     grid-template-columns: 45vw 45vw;
-    grid-column-gap: 3%;
+    grid-column-gap: 3vw;
+    grid-row-gap: 3vh;
     justify-content: center;
   }
-  .menu a ul {
+  .menu__item ul {
     height: 50vh;
     font-size: 3vw;
     min-height: 400px;
@@ -188,11 +216,14 @@ h1, footer:not(.menu-prev__footer) a {
 }
 @media screen and (max-width: 599px) {
   .menu {
-    display: block;
+    display: grid;
+    grid-template-columns: 80vw;
+    grid-row-gap: 8vw;
+    justify-content: center;
   }
-  .menu a ul {
-    height: 70vh;
-    font-size: 5.5vw;
+  .menu__item ul {
+    height: 60vh;
+    font-size: 5vw;
   }
 }
 .next {
