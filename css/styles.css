@@ -1,3 +1,5 @@
+/*--------------------------------header, footer and "prochainement" section-----------------------------------------------------------------------------------------------*/
+/*-------------------------------Menu background---------------------------------------------------------------------------------------------------------------------------*/
 body > header h1 {
   text-align: center;
   margin: 0;
@@ -11,24 +13,68 @@ footer:not(.menu-prev__footer) {
   display: flex;
   justify-content: space-between;
   bottom: 0;
+  z-index: 100;
 }
 footer:not(.menu-prev__footer) a {
   padding: 10px;
 }
+footer:not(.menu-prev__footer) a:hover {
+  font-weight: bold;
+  animation: wiggle-effect 0.5s infinite;
+}
 
+@keyframes wiggle-effect {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
 body > header, footer:not(.menu-prev__footer) {
-  background-color: green;
+  background-color: #4e9c87;
 }
 
 h1, footer:not(.menu-prev__footer) a {
-  color: red;
+  color: #fdcb46;
 }
 
 .menu {
   padding: 30px;
 }
-.menu a ul {
-  border: 1px solid black;
+.menu__item {
+  position: relative;
+  z-index: 1;
+  box-shadow: 1px 1px 15px #eaeaea;
+}
+.menu__item ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,115 +82,192 @@ h1, footer:not(.menu-prev__footer) a {
   list-style-type: none;
   padding-inline-start: 0;
 }
-.menu a:nth-child(1) ul {
+.menu__item ul li {
+  transition: transform 0.6s cubic-bezier(0.86, -0.83, 0.07, 1.99);
+}
+.menu__item:hover ul > li {
+  transform: scale(1.1, 1.8);
+}
+.menu__item:hover::after {
+  opacity: 1;
+}
+.menu__item::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.685);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s cubic-bezier(1, 0.05, 0.36, 1);
+}
+.menu__item:nth-child(1) {
   background: #fcdfdb;
 }
-.menu a:nth-child(1) ul li {
+.menu__item:nth-child(1) li {
   color: #3d1319;
 }
-.menu a:nth-child(1) ul li:nth-child(2) {
+.menu__item:nth-child(1) li:nth-child(2) {
   font-family: "Dear Joe 6";
 }
-.menu a:nth-child(1) ul li:nth-child(3) {
+.menu__item:nth-child(1) li:nth-child(3) {
   font-family: "Segoe Print Bold";
   Font-size: 2em;
 }
-.menu a:nth-child(1) ul i {
+.menu__item:nth-child(1) i {
   font-size: 3em;
   background: -webkit-linear-gradient(left, #f55f62, #f6916a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu a:nth-child(2) ul {
+.menu__item:nth-child(2) {
   background-color: #fff5fe;
 }
-.menu a:nth-child(2) ul li:nth-child(1) {
+.menu__item:nth-child(2) li:nth-child(1) {
   background: -webkit-linear-gradient(300deg, #d98330, #8f5aff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "menu2";
+  font-size: 0.8em;
 }
-.menu a:nth-child(2) ul li:nth-child(2) {
+.menu__item:nth-child(2) li:nth-child(2) {
   font-family: "CandidaStdBold";
   Font-size: 2em;
   color: #c77412;
   font-weight: bolder;
 }
-.menu a:nth-child(3) ul {
+.menu__item:nth-child(3) {
   background-color: #edefef;
 }
-.menu a:nth-child(3) ul li:nth-child(1) {
+.menu__item:nth-child(3) li:nth-child(1) {
   background: -webkit-linear-gradient(300deg, #0229dd, #4ea9fb);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "DancingScript-Regular";
   font-weight: lighter;
-  font-size: 1.5em;
 }
-.menu a:nth-child(3) ul li:nth-child(2) {
+.menu__item:nth-child(3) li:nth-child(2) {
   font-family: "segoeprint";
   Font-size: 2em;
   color: #0887fb;
   font-weight: bold;
 }
-.menu a:nth-child(4) ul {
+.menu__item:nth-child(4) {
   background-color: #fdfffd;
 }
-.menu a:nth-child(4) ul li:nth-child(1) {
+.menu__item:nth-child(4) li:nth-child(1) {
   background: -webkit-linear-gradient(left, #3e923a, #beff7f);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "BreeshLight";
-  font-size: 1.8em;
 }
-.menu a:nth-child(4) ul li:nth-child(2) {
+.menu__item:nth-child(4) li:nth-child(2) {
   font-family: "segoeprint";
   Font-size: 2em;
   color: #72bf56;
   font-weight: lighter;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1420px) {
   .menu {
     display: flex;
     justify-content: space-around;
   }
-  .menu a {
+  .menu__item {
     width: 23%;
   }
-  .menu a ul {
+  .menu__item ul {
     height: 70vh;
+    min-height: 300px;
+    font-size: 1.3vw;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 1024px) and (max-width: 1419px) {
   .menu {
     display: grid;
-    grid-template-columns: 35% 35%;
-    grid-column-gap: 5%;
+    grid-template-columns: 38% 38%;
+    grid-column-gap: 3vw;
+    grid-row-gap: 3vh;
     justify-content: center;
   }
-  .menu a ul {
-    height: 35vh;
-    overflow: hidden;
+  .menu__item ul {
+    height: 70vh;
+    font-size: 2vw;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) and (max-width: 1023px) {
   .menu {
-    display: block;
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    grid-column-gap: 3vw;
+    grid-row-gap: 3vh;
+    justify-content: center;
+  }
+  .menu__item ul {
+    height: 50vh;
+    font-size: 3vw;
+    min-height: 400px;
   }
 }
-main > .next p {
-  width: 30%;
-  margin: auto;
-  text-align: center;
+@media screen and (max-width: 599px) {
+  .menu {
+    display: grid;
+    grid-template-columns: 80vw;
+    grid-row-gap: 8vw;
+    justify-content: center;
+  }
+  .menu__item ul {
+    height: 60vh;
+    font-size: 5vw;
+  }
+}
+.next {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+.next__btn {
+  display: flex;
+  align-items: baseline;
+  background-color: #4e9c87;
+  color: #fdcb46;
+  border-radius: 10px;
+  padding: 0 30px;
+}
+.next__btn h2 {
   font-size: 1.3em;
-  color: red;
-  background-color: green;
-  padding: 7px 0;
+  color: #fdcb46;
+}
+.next__btn--animPoint {
+  font-size: 0.3em;
+}
+.next__btn--animPoint i {
+  margin-left: 3px;
+}
+.next__btn--animPoint i:nth-child(1) {
+  animation: animation-point 0.6s 0s infinite cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.next__btn--animPoint i:nth-child(2) {
+  animation: animation-point 0.6s 150ms infinite cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.next__btn--animPoint i:nth-child(3) {
+  animation: animation-point 0.6s 0s infinite cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+@keyframes animation-point {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .menu-prev--menu1 {
@@ -272,6 +395,11 @@ main > .next p {
 .menu-prev--menu3 section .menu-prev__heading h3 {
   font-weight: unset;
 }
+.menu-prev--menu3 section .menu-prev__heading h3:hover + div {
+  height: 0px;
+  border-top: 3px solid #0228dd;
+  transform: scale(1, 1);
+}
 .menu-prev--menu3 section .menu-prev__heading + div, .menu-prev--menu3 section .menu-prev__heading + ul {
   width: 82%;
   margin: auto;
@@ -378,7 +506,7 @@ body a {
   text-decoration: none;
 }
 body h1 a:visited {
-  color: red;
+  color: #fdcb46;
 }
 
 .menu-prev {
@@ -405,22 +533,24 @@ body h1 a:visited {
 .menu-prev ul li {
   list-style-type: none;
 }
-.menu-prev .menu-prev__heading {
+.menu-prev__heading {
   display: flex;
 }
-
-.next {
-  background-color: green;
-  color: red;
-  width: 15%;
-  padding: 10px;
-  border-radius: 10px;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 100px;
+.menu-prev__heading div {
+  display: block;
 }
-.next h2 {
-  margin: 0;
+.menu-prev__heading div h3:hover + div {
+  height: 0px;
+  border-top: 3px solid #0228dd;
+  transform: scale(1, 1);
+}
+.menu-prev__heading--animationLine {
+  height: 3px;
+  position: relative;
+  top: -12px;
+  transform: scale(0, 0.5);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
 }
 
 /*# sourceMappingURL=styles.css.map */
