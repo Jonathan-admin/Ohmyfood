@@ -3,8 +3,27 @@
         background-color: $background-menu3-color;
         padding: 4vh 2vw 15vh 2vw;
         section {
+            margin-bottom: 20px;
             font-family: segoeprint;
             font-size: 0.76em;
+            &:nth-of-type(1) {
+                h3:hover + div {
+                    background: rgb(2, 40, 221);    
+                }
+            }
+            &:nth-of-type(2) {
+                h3:hover + div {
+                    background:rgb(6, 112, 243); 
+                }
+            }
+            &:nth-of-type(3) {
+                h3:hover + div {
+                    background:rgb(34, 157, 249); 
+                }
+            }
+            h3 {
+                font-weight: normal;
+            }
         }
     }
     &__header--m3 {
@@ -14,29 +33,37 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'DancingScript-Regular';
-            margin-bottom: 5vh;
+            margin-bottom: 8vh;
             font-size: 3.5em;
+            @media screen and (max-width: 500px) {
+                font-size: 2.5em;
+            }
         }
     }
-    &__head-section--m3 {
-        img {
-            width: 33%;
-            height: 12px;
-            position: relative;
-            top: 21px;
-        }
-        h3 {
-            font-weight: unset;
-            &:hover + div {
-                height: 0px;
-                border-top: 3px solid rgb(2,40,221);
-                transform: scale(1,1);
+    &__head-section {
+        &--m3 {
+            margin-bottom: 12px;
+            img {
+                width: 33%;
+                height: 12px;
+                position: relative;
+                top: 7px;
+                @media screen and (max-width: 500px) {
+                    top: 15px;
+                }
             }
+        }
+        &--a3 {
+            transform: scale(0,0.5);
+            height: 4px;
         }
     }
     &__content--m3 { 
         width: 82%;
         margin: auto;
+        @media screen and (max-width: 500px) {
+            width: 95%;
+        }
         tr {
             td {
                 padding: 6px 0;
