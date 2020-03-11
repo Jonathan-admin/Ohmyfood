@@ -2,11 +2,11 @@
     &--menu1 {
         background: $background-menu1-color;
         color: rgb(61,19,25);
-        padding: 30px 50px;
+        padding: 50px 40px;
         section {
-            margin-bottom: 25px;
+            margin-bottom: 50px;
             font-family: segoeprint;
-            font-size: 0.8em;
+            font-size: 0.9em;
         }
     }
     &__header--m1 {
@@ -17,7 +17,7 @@
         }
         h2 {
             font-family: 'Dear Joe 6';
-            margin: 0 0 10px 0;
+            margin-bottom: 30px;
             font-size: 1.5em;
             font-weight: bold;
         }
@@ -36,15 +36,13 @@
                 font-family: segoeprint;
                 font-size: 1.35em;
                 &:hover + div{
-                    background-color: rgb(61,19,25);
-                    height: 3px;
-                    border:2px solid re;
+                    background-color: rgb(61,19,25);    
                 }
             }
         } 
         &--a1 {
             transform: scale(0.2,0.5);
-           
+            height: 3px;
         }
     }
     &__content--m1 { 
@@ -65,11 +63,11 @@
         font-weight: bold;
         font-size: 1.2em;
         img {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             margin-right: 10px;
             position: relative;
-            top: 15px;
+            top: 12px;
         }
     }
 }
