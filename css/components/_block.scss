@@ -3,7 +3,6 @@
     box-shadow: 1px 1px 15px rgb(234,234,234);
     &__content { 
         table-layout: auto;
-        width: 100%;
         tr {
             td {
                 &:nth-child(1) {
@@ -22,29 +21,20 @@
             position: relative;
         }
         div {
-            display: block;
             h3 {
                 margin: 0;
-                background-color: red;
                 &:hover + div {
-                    height: 0px;
-                    border-top: 3px solid rgb(2,40,221);
-                    transform: scale(1,1);
+                    position: relative;
+                    transform: scale(1);
+                    transform-origin: left;
+                    transition: transform 0.5s ease-in-out;
                 }
             }
-        }
-        &--animationLine {
-            height: 3px;
-            position: relative;
-            top: -12px;
-            transform: scale(0,0.5);
-            transform-origin: left;
-            transition: transform 0.5s ease-in-out;
         }
     }
     @media screen and (min-width: 500px) {
         width: 30%;
-        min-width: 480px;
+        min-width: 560px;
         margin: auto;
     }
     @media screen and (max-width: 500px) {

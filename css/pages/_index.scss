@@ -10,7 +10,7 @@
             justify-content: center;
             text-align: center;
             list-style-type: none;
-            padding-inline-start: 0; 
+            padding-left: 0; 
             li {
                 transition: transform 0.6s cubic-bezier(.86,-0.83,.07,1.99);
             }     
@@ -50,7 +50,6 @@
             i {
                 font-size: 3em;
                 background: -webkit-linear-gradient(left, rgb(245,95,98),rgb(246,145,106));
-                background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -60,7 +59,6 @@
             li {
                 &:nth-child(1) {
                     background: -webkit-linear-gradient(300deg, rgb(217,131,48),rgb(143,90,255));
-                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-family: 'menu2';
@@ -97,7 +95,6 @@
             li {
                 &:nth-child(1) {
                     background: -webkit-linear-gradient(left, rgb(62,146,58),rgb(190,255,127));
-                    background-clip: text;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-family: 'BreeshLight';
