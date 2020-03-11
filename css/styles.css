@@ -357,7 +357,7 @@ h1, footer:not(.menu-prev__footer) a {
 
 .menu-prev--menu3 {
   background-color: #edefef;
-  padding: 4vh 1vw 15vh 1vw;
+  padding: 4vh 2vw 15vh 2vw;
 }
 .menu-prev--menu3 section {
   font-family: segoeprint;
@@ -373,7 +373,7 @@ h1, footer:not(.menu-prev__footer) a {
   font-size: 3.5em;
 }
 .menu-prev__head-section--m3 img {
-  width: 30%;
+  width: 33%;
   height: 12px;
   position: relative;
   top: 21px;
@@ -404,7 +404,11 @@ h1, footer:not(.menu-prev__footer) a {
   background-color: #fdfffd;
   padding: 6vh 1vw 10vh 1vw;
 }
-.menu-prev--menu4 header h2 {
+.menu-prev--menu4 section {
+  font-family: segoeprint;
+  font-size: 0.73em;
+}
+.menu-prev__header--m4 h2 {
   background: -webkit-linear-gradient(left, #3e923a, #beff7f);
   background-clip: text;
   -webkit-background-clip: text;
@@ -414,35 +418,32 @@ h1, footer:not(.menu-prev__footer) a {
   margin-bottom: 4vh;
   font-size: 3em;
 }
-.menu-prev--menu4 section {
-  font-family: segoeprint;
-  font-size: 0.73em;
+@media screen and (max-width: 500px) {
+  .menu-prev__header--m4 h2 {
+    font-size: 2em;
+  }
 }
-.menu-prev--menu4 section .menu-prev__heading img {
+.menu-prev__head-section--m4 img {
   width: 35%;
   height: 10px;
   position: relative;
   top: 23px;
 }
-.menu-prev--menu4 section .menu-prev__heading h3 {
+.menu-prev__head-section--m4 h3 {
   font-weight: unset;
 }
-.menu-prev--menu4 section .menu-prev__heading + div, .menu-prev--menu4 section .menu-prev__heading + ul {
+.menu-prev__content--m4 {
   width: 83%;
   margin: auto;
 }
-.menu-prev--menu4 section ul:nth-child(even) {
-  position: relative;
-  top: -4px;
+.menu-prev__content--m4 tr td {
+  padding: 6px 0;
 }
-.menu-prev--menu4 section ul:nth-child(even) {
+.menu-prev__content--m4 tr td:nth-child(even) {
   font-size: 1.2em;
 }
-.menu-prev--menu4 section ul:nth-child(even) li:nth-child(2) {
+.menu-prev__content--m4 tr td:nth-child(even) li:nth-child(2) {
   padding: 3px 0;
-}
-.menu-prev--menu4 section ul li {
-  padding: 6px 0;
 }
 
 @font-face {

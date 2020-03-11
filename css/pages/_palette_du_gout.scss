@@ -1,7 +1,13 @@
-.menu-prev--menu4 {
-    background-color: $background-menu4-color;
-    padding: 6vh 1vw 10vh 1vw;
-    header {
+.menu-prev {
+    &--menu4 {
+        background-color: $background-menu4-color;
+        padding: 6vh 1vw 10vh 1vw;
+        section {
+            font-family: segoeprint;
+            font-size: 0.73em;
+        }
+    }
+    &__header--m4 {
         h2 {
             background: -webkit-linear-gradient(left, rgb(62,146,58),rgb(190,255,127));
             background-clip: text;
@@ -11,39 +17,34 @@
             font-size: 1.8em;
             margin-bottom: 4vh;
             font-size: 3em;
+            @media screen and (max-width: 500px) {
+                font-size: 2em;
+            }
         }
     }
-    section {
-        font-family: segoeprint;
-        font-size: 0.73em;
-        .menu-prev__heading {
-            img {
-                width: 35%;
-                height: 10px;
-                position: relative;
-                top: 23px;
-            }
-            h3 {
-                font-weight: unset;
-            }
-            & + div, & + ul {
-                width: 83%;
-                margin: auto;
-            }
+    &__head-section--m4 {
+        img {
+            width: 35%;
+            height: 10px;
+            position: relative;
+            top: 23px;
         }
-        ul {
-            &:nth-child(even) {
-                position: relative;
-                top: -4px;
-            }
-            &:nth-child(even) {
-                font-size: 1.2em;
-                & li:nth-child(2) {
-                    padding: 3px 0;
+        h3 {
+            font-weight: unset;
+        }
+    }
+    &__content--m4 { 
+        width: 83%;
+        margin: auto;
+        tr {
+            td {
+                padding: 6px 0;    
+                &:nth-child(even) {
+                    font-size: 1.2em;
+                    & li:nth-child(2) {
+                        padding: 3px 0;
+                    }
                 }
-            }
-            li {
-                padding: 6px 0;
             }
         }
     }
