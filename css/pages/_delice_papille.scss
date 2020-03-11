@@ -1,53 +1,51 @@
-.menu-prev--menu3 {
-    background-color: $background-menu3-color;
-    padding: 4vh 1vw 15vh 1vw;
-    header {
+.menu-prev {
+    &--menu3 {
+        background-color: $background-menu3-color;
+        padding: 4vh 2vw 15vh 2vw;
+        section {
+            font-family: segoeprint;
+            font-size: 0.76em;
+        }
+    }
+    &__header--m3 {
         h2 {
             background: -webkit-linear-gradient(300deg, rgb(2,41,221),rgb(78,169,251));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'DancingScript-Regular';
-            margin-bottom: 4vh;
-            font-size: 3em;
+            margin-bottom: 5vh;
+            font-size: 3.5em;
         }
     }
-    section {
-        font-family: segoeprint;
-        font-size: 0.76em;
-        .menu-prev__heading {
-            img {
-                width: 30%;
-                height: 12px;
-                position: relative;
-                top: 21px;
-            }
-            h3 {
-                font-weight: unset;
-                &:hover + div {
-                    height: 0px;
-                    border-top: 3px solid rgb(2,40,221);
-                    transform: scale(1,1);
-                }
-            }
-            & + div, & + ul {
-                width: 82%;
-                margin: auto;
+    &__head-section--m3 {
+        img {
+            width: 33%;
+            height: 12px;
+            position: relative;
+            top: 21px;
+        }
+        h3 {
+            font-weight: unset;
+            &:hover + div {
+                height: 0px;
+                border-top: 3px solid rgb(2,40,221);
+                transform: scale(1,1);
             }
         }
-        ul {
-            &:nth-child(even) {
-                position: relative;
-                top: -5px;
-            }
-            &:nth-child(even) {
-                font-size: 1.2em;
-                & li:nth-child(2) {
-                    padding: 2px 0;
-                }
-            }
-            li {
+    }
+    &__content--m3 { 
+        width: 82%;
+        margin: auto;
+        tr {
+            td {
                 padding: 6px 0;
+                &:nth-child(even) {
+                    font-size: 1.2em;
+                    & li:nth-child(2) {
+                        padding: 2px 0;
+                    }
+                }
             }
         }
     }
