@@ -6,12 +6,12 @@
             margin-bottom: 30px;
             font-family: segoeprint;
             font-size: 0.73em;
+            color: $text-menu4-color;
         }
     }
     &__header--m4 {
         h2 {
-            background: -webkit-linear-gradient(left, rgb(62,146,58),rgb(190,255,127));
-            background-clip: text;
+            background: -webkit-linear-gradient(left, $title-menu4-degrColors);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'BreeshLight';
@@ -38,7 +38,7 @@
             h3 {
                 font-weight: unset;
                 &:hover + div{
-                    background-color: rgb(219,253,188);    
+                    background-color: $line-menu4-color;    
                 }
             }
         }

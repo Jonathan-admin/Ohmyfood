@@ -1,7 +1,7 @@
 .menu-prev {
     &--menu1 {
         background: $background-menu1-color;
-        color: rgb(61,19,25);
+        color: $text-menu1-color;
         padding: 50px 40px;
         section {
             margin-bottom: 50px;
@@ -36,7 +36,7 @@
                 font-family: segoeprint;
                 font-size: 1.35em;
                 &:hover + div{
-                    background-color: rgb(61,19,25);    
+                    background-color: $text-menu1-color;    
                 }
             }
         } 

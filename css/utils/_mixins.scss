@@ -1,8 +1,0 @@
-@mixin menu-heading-animationline($color-line, $number-part, $menu-number) {
-    @if ($menu-number==1) {
-        height: 0px;
-        border-top: 3px solid rgb(2,40,221);
-        transform: scale(1,1);
-                   
-        }@else{
-}

@@ -3,7 +3,7 @@
     &__item {
         position: relative;
         z-index: 1;
-        box-shadow: 1px 1px 15px rgb(234,234,234);
+        box-shadow: 1px 1px 15px $menu-shadow;
         ul {
             display: flex;
             flex-direction: column;
@@ -17,7 +17,7 @@
         }
         &:hover {
             ul>li {
-                transform: scale(1.1,1.8);
+                transform: scale(1.1,1.6);
             }
             &::after {
                 opacity: 1;
@@ -36,9 +36,9 @@
             transition: opacity 0.5s cubic-bezier(1,.05,.36,1);
         }
         &:nth-child(1) {
-            background:rgb(252,223,219);
+            background:$background-menu1-color;
             li {
-                color: rgb(61,19,25);
+                color: $text-menu1-color;
                 &:nth-child(2) {
                     font-family: 'Dear Joe 6';
                 }
@@ -55,10 +55,10 @@
             }
         }            
         &:nth-child(2) {
-            background-color: rgb(255, 245, 254);
+            background-color: $background-menu2-color;
             li {
                 &:nth-child(1) {
-                    background: -webkit-linear-gradient(300deg, rgb(217,131,48),rgb(143,90,255));
+                    background: -webkit-linear-gradient(300deg, nth($text-colors-menu2,1),nth($text-colors-menu2,2));
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-family: 'menu2';
@@ -67,16 +67,16 @@
                 &:nth-child(2) {
                     font-family: 'CandidaStdBold';
                     Font-size: 2em;
-                    color: rgb(199,116,18);
+                    color: nth($text-colors-menu2,3);
                     font-weight: bolder;
                 }
             }
         }
         &:nth-child(3) {
-            background-color: rgb(237, 239, 239);
+            background-color: $background-menu3-color;
             li {
                 &:nth-child(1) {
-                    background: -webkit-linear-gradient(300deg, rgb(2,41,221),rgb(78,169,251));
+                    background: -webkit-linear-gradient(300deg, nth($text-colors-menu3,1),nth($text-colors-menu3,2));
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-family: 'DancingScript-Regular';
@@ -85,7 +85,7 @@
                 &:nth-child(2) {
                     font-family: 'segoeprint';
                     Font-size: 2em;
-                    color: rgb(8,135,251);
+                    color: nth($text-colors-menu3,3);
                     font-weight: bold;
                 }
             }
@@ -94,7 +94,7 @@
             background-color: rgb(253, 255, 253);
             li {
                 &:nth-child(1) {
-                    background: -webkit-linear-gradient(left, rgb(62,146,58),rgb(190,255,127));
+                    background: -webkit-linear-gradient(left, nth($text-colors-menu4,1),nth($text-colors-menu4,2));
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-family: 'BreeshLight';
@@ -102,7 +102,7 @@
                 &:nth-child(2) {
                     font-family: 'segoeprint';
                     Font-size: 2em;
-                    color: rgb(114,191,86);
+                    color: nth($text-colors-menu4,3);
                     font-weight: lighter;
                 }
             }

@@ -1,5 +1,9 @@
 /*--------------------------------header, footer and "prochainement" section-----------------------------------------------------------------------------------------------*/
-/*-------------------------------Menu background---------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------Menus colors index page-----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------Menu 1 colors-----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------Menu 2 colors-----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------Menu 3 colors-----------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------Menu 4 colors-----------------------------------------------------------------------------------------------------------------*/
 body h1 {
   text-align: center;
   margin: 0;
@@ -59,7 +63,7 @@ h1, footer:not(.menu-prev__footer) a {
   transition: transform 0.6s cubic-bezier(0.86, -0.83, 0.07, 1.99);
 }
 .menu__item:hover ul > li {
-  transform: scale(1.1, 1.8);
+  transform: scale(1.1, 1.6);
 }
 .menu__item:hover::after {
   opacity: 1;
@@ -99,7 +103,7 @@ h1, footer:not(.menu-prev__footer) a {
   background-color: #fff5fe;
 }
 .menu__item:nth-child(2) li:nth-child(1) {
-  background: -webkit-linear-gradient(300deg, #d98330, #8f5aff);
+  background: -webkit-linear-gradient(300deg, #e38a12, #8f5aff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "menu2";
@@ -115,7 +119,7 @@ h1, footer:not(.menu-prev__footer) a {
   background-color: #edefef;
 }
 .menu__item:nth-child(3) li:nth-child(1) {
-  background: -webkit-linear-gradient(300deg, #0229dd, #4ea9fb);
+  background: -webkit-linear-gradient(300deg, #0023db, #1a91fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "DancingScript-Regular";
@@ -327,7 +331,6 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev__header--m2 h2 {
   background: -webkit-linear-gradient(300deg, #d98330, #8f5aff);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "menu2";
@@ -378,6 +381,7 @@ h1, footer:not(.menu-prev__footer) a {
   margin-bottom: 20px;
   font-family: segoeprint;
   font-size: 0.76em;
+  color: black;
 }
 .menu-prev--menu3 section:nth-of-type(1) h3:hover + div {
   background: #0228dd;
@@ -393,7 +397,6 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev__header--m3 h2 {
   background: -webkit-linear-gradient(300deg, #0229dd, #4ea9fb);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "DancingScript-Regular";
@@ -450,10 +453,10 @@ h1, footer:not(.menu-prev__footer) a {
   margin-bottom: 30px;
   font-family: segoeprint;
   font-size: 0.73em;
+  color: black;
 }
 .menu-prev__header--m4 h2 {
   background: -webkit-linear-gradient(left, #3e923a, #beff7f);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "BreeshLight";

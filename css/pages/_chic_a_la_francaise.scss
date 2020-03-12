@@ -7,21 +7,21 @@
             font-family: DecaSerif;
             font-size: 0.9em;
             &:nth-of-type(1) {
-                color: rgb(198,116,18); 
+                color: nth($text-menu2-color-parts,1);
                 h3:hover + div {
-                    background: rgb(198,116,18);    
+                    background: nth($text-menu2-color-parts,1);   
                 }
             }
             &:nth-of-type(2) {
-                color: rgb(165,103,153); 
+                color: nth($text-menu2-color-parts,2); 
                 h3:hover + div {
-                    background:rgb(165,103,153); 
+                    background: nth($text-menu2-color-parts,2);
                 }
             }
             &:nth-of-type(3) {
-                color: rgb(110,76,204); 
+                color: nth($text-menu2-color-parts,3);
                 h3:hover + div {
-                    background:rgb(110,76,204); 
+                    background: nth($text-menu2-color-parts,3);
                 }
                 td {
                     text-align: left;
@@ -31,8 +31,7 @@
     }
     &__header--m2 {
         h2 {
-            background: -webkit-linear-gradient(300deg, rgb(217,131,48),rgb(143,90,255));
-            background-clip: text;
+            background: -webkit-linear-gradient(300deg, $title-menu2-degrColors);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-family: 'menu2';
