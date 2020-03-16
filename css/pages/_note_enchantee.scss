@@ -1,12 +1,11 @@
 .menu-prev {
     &--menu1 {
         background: $background-menu1-color;
-        color: $text-menu1-color;
+        @include typography(null,$text-menu1-color,null,null);
         padding: 50px 40px;
         section {
             margin-bottom: 50px;
-            font-family: segoeprint;
-            font-size: 0.9em;
+            @include typography('segoeprint',null,null,0.9em);
         }
     }
     &__header--m1 {
@@ -16,10 +15,8 @@
             height: auto;
         }
         h2 {
-            font-family: 'Dear Joe 6';
+            @include typography('Dear Joe 6',null,bold,1.5em);
             margin-bottom: 30px;
-            font-size: 1.5em;
-            font-weight: bold;
         }
     }
     &__head-section {
@@ -33,8 +30,7 @@
                 }
             }
             h3 {
-                font-family: segoeprint;
-                font-size: 1.35em;
+                @include typography('segoeprint',null,bold,1.35em);
                 &:hover + div{
                     background-color: $text-menu1-color;    
                 }
@@ -59,9 +55,7 @@
     &__footer {
         display: flex;
         justify-content: center;
-        font-family: 'Dear Joe 6';
-        font-weight: bold;
-        font-size: 1.2em;
+        @include typography('Dear Joe 6',null,bold,1.2em);
         img {
             width: 40px;
             height: 40px;

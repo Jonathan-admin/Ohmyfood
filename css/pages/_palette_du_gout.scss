@@ -4,9 +4,7 @@
         padding: 4vh 1vw 10vh 1vw;
         section {
             margin-bottom: 30px;
-            font-family: segoeprint;
-            font-size: 0.73em;
-            color: $text-menu4-color;
+            @include typography('segoeprint',$text-menu4-color,null,0.73em);
         }
     }
     &__header--m4 {

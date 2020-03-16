@@ -1,0 +1,31 @@
+
+$lg-index-resp: (
+    grid-template-columns: 38% 38%,
+    grid-column-gap: 3vw,
+    grid-row-gap: 3vh,
+    height: 70vh,
+    min-height: unset,
+    font-size: 2vw 
+);
+$md-index-resp: (
+    grid-template-columns: 45vw 45vw,
+    grid-column-gap: 3vw,
+    grid-row-gap: 3vh,
+    height: 50vh,
+    min-height: 400px,
+    font-size: 3vw
+);
+$xs-index-resp: (
+    grid-template-columns: 80vw,
+    grid-row-gap: 5vw,
+    grid-column-gap: 0,
+    height: 60vh,
+    min-height: unset,
+    font-size: 5vw 
+);
+$breakpoints: (
+    lg: 1024px 1419px, 
+    md: 600px 1023px,
+    xd: 0px 599px
+); 
+

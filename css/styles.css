@@ -1,9 +1,3 @@
-/*--------------------------------header, footer and "prochainement" section-----------------------------------------------------------------------------------------------*/
-/*-------------------------------Menus colors index page-----------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------Menu 1 colors-----------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------Menu 2 colors-----------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------Menu 3 colors-----------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------Menu 4 colors-----------------------------------------------------------------------------------------------------------------*/
 body h1 {
   text-align: center;
   margin: 0;
@@ -44,9 +38,12 @@ h1, footer:not(.menu-prev__footer) a {
 }
 
 .menu {
+  display: flex;
+  justify-content: space-around;
   padding: 30px;
 }
 .menu__item {
+  width: 23%;
   position: relative;
   z-index: 1;
   box-shadow: 1px 1px 15px #eaeaea;
@@ -58,6 +55,9 @@ h1, footer:not(.menu-prev__footer) a {
   text-align: center;
   list-style-type: none;
   padding-left: 0;
+  height: 70vh;
+  min-height: 300px;
+  font-size: 1.3vw;
 }
 .menu__item ul li {
   transition: transform 0.6s cubic-bezier(0.86, -0.83, 0.07, 1.99);
@@ -91,7 +91,7 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu__item:nth-child(1) li:nth-child(3) {
   font-family: "Segoe Print Bold";
-  Font-size: 2em;
+  font-size: 2em;
 }
 .menu__item:nth-child(1) i {
   font-size: 3em;
@@ -111,9 +111,9 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu__item:nth-child(2) li:nth-child(2) {
   font-family: "CandidaStdBold";
-  Font-size: 2em;
   color: #c77412;
   font-weight: bolder;
+  font-size: 2em;
 }
 .menu__item:nth-child(3) {
   background-color: #edefef;
@@ -127,9 +127,9 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu__item:nth-child(3) li:nth-child(2) {
   font-family: "segoeprint";
-  Font-size: 2em;
   color: #0887fb;
   font-weight: bold;
+  font-size: 2em;
 }
 .menu__item:nth-child(4) {
   background-color: #fdfffd;
@@ -142,64 +142,53 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu__item:nth-child(4) li:nth-child(2) {
   font-family: "segoeprint";
-  Font-size: 2em;
   color: #72bf56;
   font-weight: lighter;
+  font-size: 2em;
 }
-
-@media screen and (min-width: 1420px) {
+@media screen and (max-width: 1419px) {
   .menu {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    justify-content: center;
   }
   .menu__item {
-    width: 23%;
-  }
-  .menu__item ul {
-    height: 70vh;
-    min-height: 300px;
-    font-size: 1.3vw;
+    width: 100%;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1419px) {
   .menu {
-    display: grid;
     grid-template-columns: 38% 38%;
     grid-column-gap: 3vw;
     grid-row-gap: 3vh;
-    justify-content: center;
   }
-  .menu__item ul {
+  .menu ul {
     height: 70vh;
     font-size: 2vw;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1023px) {
   .menu {
-    display: grid;
     grid-template-columns: 45vw 45vw;
     grid-column-gap: 3vw;
     grid-row-gap: 3vh;
-    justify-content: center;
   }
-  .menu__item ul {
+  .menu ul {
     height: 50vh;
-    font-size: 3vw;
     min-height: 400px;
+    font-size: 3vw;
   }
 }
-@media screen and (max-width: 599px) {
+@media screen and (min-width: 0px) and (max-width: 599px) {
   .menu {
-    display: grid;
     grid-template-columns: 80vw;
-    grid-row-gap: 8vw;
-    justify-content: center;
+    grid-row-gap: 5vw;
   }
-  .menu__item ul {
+  .menu ul {
     height: 60vh;
     font-size: 5vw;
   }
 }
+
 .next {
   margin-bottom: 100px;
   display: flex;
@@ -240,7 +229,7 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu1 section {
   margin-bottom: 50px;
-  font-family: segoeprint;
+  font-family: "segoeprint";
   font-size: 0.9em;
 }
 .menu-prev__header--m1 img {
@@ -250,9 +239,9 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev__header--m1 h2 {
   font-family: "Dear Joe 6";
-  margin-bottom: 30px;
-  font-size: 1.5em;
   font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 30px;
 }
 .menu-prev__head-section--m1 img {
   width: 35%;
@@ -265,7 +254,8 @@ h1, footer:not(.menu-prev__footer) a {
   }
 }
 .menu-prev__head-section--m1 h3 {
-  font-family: segoeprint;
+  font-family: "segoeprint";
+  font-weight: bold;
   font-size: 1.35em;
 }
 .menu-prev__head-section--m1 h3:hover + div {
@@ -305,7 +295,7 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu2 section {
   margin-bottom: 50px;
-  font-family: DecaSerif;
+  font-family: "DecaSerif";
   font-size: 0.9em;
 }
 .menu-prev--menu2 section:nth-of-type(1) {
@@ -379,9 +369,9 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu3 section {
   margin-bottom: 20px;
-  font-family: segoeprint;
-  font-size: 0.76em;
+  font-family: "segoeprint";
   color: black;
+  font-size: 0.76em;
 }
 .menu-prev--menu3 section:nth-of-type(1) h3:hover + div {
   background: #0228dd;
@@ -451,9 +441,9 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu4 section {
   margin-bottom: 30px;
-  font-family: segoeprint;
-  font-size: 0.73em;
+  font-family: "segoeprint";
   color: black;
+  font-size: 0.73em;
 }
 .menu-prev__header--m4 h2 {
   background: -webkit-linear-gradient(left, #3e923a, #beff7f);

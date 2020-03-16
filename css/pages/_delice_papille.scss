@@ -4,9 +4,7 @@
         padding: 4vh 2vw 15vh 2vw;
         section {
             margin-bottom: 20px;
-            font-family: segoeprint;
-            font-size: 0.76em;
-            color: $text-menu3-color;
+            @include typography('segoeprint',$text-menu3-color,null,0.76em);
             &:nth-of-type(1) {
                 h3:hover + div {
                     background: nth($line-menu3-color-parts,1);    

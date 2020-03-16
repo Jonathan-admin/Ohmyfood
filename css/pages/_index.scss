@@ -1,6 +1,9 @@
 .menu {
+    display: flex;
+    justify-content: space-around;
     padding: 30px;
     &__item {
+        width: 23%;
         position: relative;
         z-index: 1;
         box-shadow: 1px 1px 15px $menu-shadow;
@@ -11,6 +14,9 @@
             text-align: center;
             list-style-type: none;
             padding-left: 0; 
+            height: 70vh;
+            min-height: 300px;
+            font-size: 1.3vw;
             li {
                 transition: transform 0.6s cubic-bezier(.86,-0.83,.07,1.99);
             }     
@@ -40,11 +46,10 @@
             li {
                 color: $text-menu1-color;
                 &:nth-child(2) {
-                    font-family: 'Dear Joe 6';
+                    @include typography('Dear Joe 6',null,null,null);
                 }
                 &:nth-child(3) {
-                    font-family: 'Segoe Print Bold';
-                    Font-size: 2em;
+                    @include typography('Segoe Print Bold');
                 }
             }
             i {
@@ -65,10 +70,7 @@
                     font-size: 0.8em;
                 }
                 &:nth-child(2) {
-                    font-family: 'CandidaStdBold';
-                    Font-size: 2em;
-                    color: nth($text-colors-menu2,3);
-                    font-weight: bolder;
+                    @include typography('CandidaStdBold', nth($text-colors-menu2,3), bolder);
                 }
             }
         }
@@ -83,10 +85,8 @@
                     font-weight: lighter;
                 }
                 &:nth-child(2) {
-                    font-family: 'segoeprint';
-                    Font-size: 2em;
-                    color: nth($text-colors-menu3,3);
-                    font-weight: bold;
+                    @include typography('segoeprint',nth($text-colors-menu3,3),bold,2em);
+                    
                 }
             }
         }
@@ -100,79 +100,19 @@
                     font-family: 'BreeshLight';
                 }
                 &:nth-child(2) {
-                    font-family: 'segoeprint';
-                    Font-size: 2em;
-                    color: nth($text-colors-menu4,3);
-                    font-weight: lighter;
+                    @include typography('segoeprint', nth($text-colors-menu4,3), lighter);
                 }
             }
         }
     }
-}
-
-@media screen and (min-width: 1420px)
-{   
-    .menu {
-        display: flex;
-        justify-content: space-around;
-        &__item {
-            width: 23%;
-            ul {
-                height: 70vh;
-                min-height: 300px;
-                font-size: 1.3vw;
-            }
-        }
-    }
-}
-@media screen and (min-width: 1024px) and (max-width: 1419px) {
-    .menu {
+    @media screen and (max-width: 1419px) {
         display: grid;
-        grid-template-columns: 38% 38%;
-        grid-column-gap: 3vw;
-        grid-row-gap: 3vh;
         justify-content: center;
         &__item {
-            ul {
-                height: 70vh;
-                font-size: 2vw;
-            }
+            width: 100%;
         }
     }
-}
-
-@media screen and (min-width: 600px) and (max-width: 1023px) 
-{
-    .menu {
-        display: grid;
-        grid-template-columns: 45vw 45vw;
-        grid-column-gap: 3vw;
-        grid-row-gap: 3vh;
-        justify-content: center;
-        &__item {
-            ul {
-                height: 50vh;
-                font-size: 3vw;
-                min-height: 400px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 599px) 
-{
-    .menu {
-        display: grid;
-        grid-template-columns: 80vw;
-        grid-row-gap: 8vw;
-        justify-content: center;
-        &__item {
-            ul {
-                height: 60vh;
-                font-size: 5vw;
-            }
-        }
-    }
+    @include index-responsive();
 }
 
 .next {
