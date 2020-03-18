@@ -8,9 +8,8 @@
         z-index: 1;
         box-shadow: 1px 1px 15px $menu-shadow;
         ul {
-            display: flex;
+            @extend %flex-center;
             flex-direction: column;
-            justify-content: center;
             text-align: center;
             list-style-type: none;
             padding-left: 0; 
@@ -52,22 +51,12 @@
                     @include typography('Segoe Print Bold');
                 }
             }
-            i {
-                font-size: 3em;
-                background: -webkit-linear-gradient(left, rgb(245,95,98),rgb(246,145,106));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
         }            
         &:nth-child(2) {
             background-color: $background-menu2-color;
             li {
                 &:nth-child(1) {
-                    background: -webkit-linear-gradient(300deg, nth($text-colors-menu2,1),nth($text-colors-menu2,2));
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-family: 'menu2';
-                    font-size: 0.8em;
+                    @include typography-deg('menu2',nth($text-colors-menu2,1),nth($text-colors-menu2,2),300deg,null,0.8em); 
                 }
                 &:nth-child(2) {
                     @include typography('CandidaStdBold', nth($text-colors-menu2,3), bolder);
@@ -78,26 +67,19 @@
             background-color: $background-menu3-color;
             li {
                 &:nth-child(1) {
-                    background: -webkit-linear-gradient(300deg, nth($text-colors-menu3,1),nth($text-colors-menu3,2));
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-family: 'DancingScript-Regular';
-                    font-weight: lighter;
+                    @include typography-deg('DancingScript-Regular',nth($text-colors-menu3,1),nth($text-colors-menu3,2),300deg,lighter,null); 
                 }
                 &:nth-child(2) {
-                    @include typography('segoeprint',nth($text-colors-menu3,3),bold,2em);
+                    @include typography('segoeprint',nth($text-colors-menu3,3),bold,2em); 
                     
                 }
             }
         }
         &:nth-child(4) {
-            background-color: rgb(253, 255, 253);
+            background-color: $background-menu4-color;
             li {
                 &:nth-child(1) {
-                    background: -webkit-linear-gradient(left, nth($text-colors-menu4,1),nth($text-colors-menu4,2));
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-family: 'BreeshLight';
+                    @include typography-deg('BreeshLight',nth($text-colors-menu4,1),nth($text-colors-menu4,2),300deg,null,null);  
                 }
                 &:nth-child(2) {
                     @include typography('segoeprint', nth($text-colors-menu4,3), lighter);
@@ -117,8 +99,7 @@
 
 .next {
     margin-bottom: 100px;
-    display: flex;
-    justify-content: center;
+    @extend %flex-center;
     &__btn {
         display: flex;
         align-items: baseline;
@@ -127,9 +108,7 @@
         border-radius: 10px;
         padding: 0 30px;
         h2 {
-           
-            font-size: 1.3em;
-            color: $text-color;
+            font-size: 1.3em; 
         }
         &--animPoint {
             font-size: 0.3em;
@@ -143,8 +122,7 @@
                 }
                 &:nth-child(3) {
                     animation: animation-point 0.6s 0s infinite cubic-bezier(0.55, 0.055, 0.675, 0.19);
-                }
-                
+                } 
             }
         }
     }

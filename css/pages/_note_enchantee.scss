@@ -22,12 +22,7 @@
     &__head-section {
         &--m1 {
             img {
-                width: 35%;
-                height: 8px;
-                top: 15px;
-                @media screen and (max-width: 500px) {
-                    width: 25%;
-                }
+                @include img-line-pos(menu1);  
             }
             h3 {
                 @include typography('segoeprint',null,bold,1.35em);
@@ -37,8 +32,7 @@
             }
         } 
         &--a1 {
-            transform: scale(0.2,0.5);
-            height: 3px;
+            @extend %anim-line-start;
         }
     }
     &__content--m1 { 
@@ -53,8 +47,7 @@
         }
     }
     &__footer {
-        display: flex;
-        justify-content: center;
+        @extend %flex-center;
         @include typography('Dear Joe 6',null,bold,1.2em);
         img {
             width: 40px;

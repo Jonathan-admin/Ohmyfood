@@ -23,6 +23,21 @@
         } 
     }  
 }
+@mixin typography-deg($police:'arial',$color1:black, $color2:grey, $dir:300deg, $weight:null, $size: null) {
+    $attr: "font-family", "background", "font-weight", "font-size";
+    $background: $dir, $color1, $color2;
+    $val: $police, $background, $weight, $size;
+    @for $i from 1 through 4 {
+        @if($val!=null and $i==2) {
+            #{nth($attr,$i)}: -webkit-linear-gradient($dir,$color1,$color2); 
+        } 
+        @else if ($val!=null) {
+            #{nth($attr,$i)}: nth($val,$i); 
+        }
+    }
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 @mixin typography($police:'arial', $color:null, $weight:null, $size: 2em) {
     $attr: "font-family", "color", "font-weight", "font-size";
     $val: $police, $color, $weight, $size;
@@ -31,4 +46,13 @@
             #{nth($attr,$i)}: nth($val,$i); 
         }
     }
+}
+@mixin img-line-pos($nMenu) {
+    $props: map-get($img-head-section-line,$nMenu);
+    @each $attr, $value in $props {
+        #{$attr}: $value;
+    }
+    @media screen and (max-width: 500px) {
+        width: map-get($props,width) - 10%;
+    }  
 }

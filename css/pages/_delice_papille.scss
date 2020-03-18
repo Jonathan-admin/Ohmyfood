@@ -27,12 +27,8 @@
     }
     &__header--m3 {
         h2 {
-            background: -webkit-linear-gradient(300deg, $title-menu3-degrColors);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'DancingScript-Regular';
+            @include typography-deg('DancingScript-Regular',nth($title-menu3-degrColors,1),nth($title-menu3-degrColors,2),300deg,null,3.5em);            
             margin-bottom: 8vh;
-            font-size: 3.5em;
             @media screen and (max-width: 500px) {
                 font-size: 2.5em;
             }
@@ -42,18 +38,11 @@
         &--m3 {
             margin-bottom: 12px;
             img {
-                width: 33%;
-                height: 12px;
-                position: relative;
-                top: 7px;
-                @media screen and (max-width: 500px) {
-                    top: 15px;
-                }
+                @include img-line-pos(menu3);  
             }
         }
         &--a3 {
-            transform: scale(0,0.5);
-            height: 4px;
+            @extend %anim-line-start;
         }
     }
     &__content--m3 { 
@@ -67,9 +56,6 @@
                 padding: 6px 0;
                 &:nth-child(even) {
                     font-size: 1.2em;
-                    & li:nth-child(2) {
-                        padding: 2px 0;
-                    }
                 }
             }
         }

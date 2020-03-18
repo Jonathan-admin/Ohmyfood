@@ -29,3 +29,26 @@ $breakpoints: (
     xd: 0px 599px
 ); 
 
+$img-head-section-line: (
+    menu1: (
+        width: 35%,
+        height: 8px,
+        top: 15px,
+    ),
+    menu2: (
+        width: 30%,
+        height: 12px,
+        top: 6px,
+    ),
+    menu3: (
+        width: 33%,
+        height: 12px,
+        top: 7px,
+    ),
+    menu4: (
+        width: 35%,
+        height: 10px,
+        top: 10px,
+    )
+);
+
