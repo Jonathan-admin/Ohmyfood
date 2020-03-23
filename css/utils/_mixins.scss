@@ -53,6 +53,6 @@
         #{$attr}: $value;
     }
     @media screen and (max-width: 500px) {
-        width: map-get($props,width) - 10%;
+        width: map-get($props,width) - 15%;
     }  
 }
