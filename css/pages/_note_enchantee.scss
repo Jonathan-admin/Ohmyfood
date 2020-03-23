@@ -1,12 +1,11 @@
 .menu-prev {
     &--menu1 {
         background: $background-menu1-color;
-        color: rgb(61,19,25);
+        @include typography(null,$text-menu1-color,null,null);
         padding: 50px 40px;
         section {
             margin-bottom: 50px;
-            font-family: segoeprint;
-            font-size: 0.9em;
+            @include typography('segoeprint',null,null,0.9em);
         }
     }
     &__header--m1 {
@@ -16,33 +15,24 @@
             height: auto;
         }
         h2 {
-            font-family: 'Dear Joe 6';
+            @include typography('Dear Joe 6',null,bold,1.5em);
             margin-bottom: 30px;
-            font-size: 1.5em;
-            font-weight: bold;
         }
     }
     &__head-section {
         &--m1 {
             img {
-                width: 35%;
-                height: 8px;
-                top: 15px;
-                @media screen and (max-width: 500px) {
-                    width: 25%;
-                }
+                @include img-line-pos(menu1);  
             }
             h3 {
-                font-family: segoeprint;
-                font-size: 1.35em;
+                @include typography('segoeprint',null,bold,1.35em);
                 &:hover + div{
-                    background-color: rgb(61,19,25);    
+                    background-color: $text-menu1-color;    
                 }
             }
         } 
         &--a1 {
-            transform: scale(0.2,0.5);
-            height: 3px;
+            @extend %anim-line-start;
         }
     }
     &__content--m1 { 
@@ -57,11 +47,8 @@
         }
     }
     &__footer {
-        display: flex;
-        justify-content: center;
-        font-family: 'Dear Joe 6';
-        font-weight: bold;
-        font-size: 1.2em;
+        @extend %flex-center;
+        @include typography('Dear Joe 6',null,bold,1.2em);
         img {
             width: 40px;
             height: 40px;

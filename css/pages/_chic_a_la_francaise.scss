@@ -4,24 +4,23 @@
         padding: 8vh 1vw;
         section {
             margin-bottom: 50px;
-            font-family: DecaSerif;
-            font-size: 0.9em;
+            @include typography('DecaSerif',null,null,0.9em);
             &:nth-of-type(1) {
-                color: rgb(198,116,18); 
+                @include typography(null,nth($text-menu2-color-parts,1),null,null);
                 h3:hover + div {
-                    background: rgb(198,116,18);    
+                    background: nth($text-menu2-color-parts,1);   
                 }
             }
             &:nth-of-type(2) {
-                color: rgb(165,103,153); 
+                @include typography(null,nth($text-menu2-color-parts,2),null,null);
                 h3:hover + div {
-                    background:rgb(165,103,153); 
+                    background: nth($text-menu2-color-parts,2);
                 }
             }
             &:nth-of-type(3) {
-                color: rgb(110,76,204); 
+                @include typography(null,nth($text-menu2-color-parts,3),null,null);
                 h3:hover + div {
-                    background:rgb(110,76,204); 
+                    background: nth($text-menu2-color-parts,3);
                 }
                 td {
                     text-align: left;
@@ -31,38 +30,27 @@
     }
     &__header--m2 {
         h2 {
-            background: -webkit-linear-gradient(300deg, rgb(217,131,48),rgb(143,90,255));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'menu2';
-            margin-bottom: 8vh;   
+            margin-bottom: 80px;   
+            @include typography-deg('menu2',nth($title-menu2-degrColors,1),nth($title-menu2-degrColors,2),300deg,null,null); 
         }
     }
     &__head-section {
         &--m2 {
             margin-bottom: 15px;
             img {
-                width: 30%;
-                height: 12px;
-                position: relative;
-                top: 6px;
-                @media screen and (max-width: 500px) {
-                    top: 15px;
-                }
+                @include img-line-pos(menu2);  
             }                
         }
         &--a2 {
-            transform: scale(0.2,0.5);
-            height: 3px;
+            @extend %anim-line-start;
         }
     }
     &__content--m2 { 
         width: 81%;
+        margin: auto;
         @media screen and (max-width: 500px) {
             width: 95%;
         }
-        margin: auto;
         tr {
             margin-top: 15px;
             td {

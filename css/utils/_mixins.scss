@@ -1,8 +1,58 @@
-@mixin menu-heading-animationline($color-line, $number-part, $menu-number) {
-    @if ($menu-number==1) {
-        height: 0px;
-        border-top: 3px solid rgb(2,40,221);
-        transform: scale(1,1);
-                   
-        }@else{
+@mixin index-responsive() {
+    $values-resp: $lg-index-resp, $md-index-resp, $xs-index-resp;
+    $nbTypeResp: 0;
+    @each $name, $value in $breakpoints {
+        $nbTypeResp: $nbTypeResp+1;
+        @media screen and (min-width: nth($value,1)) and (max-width: nth($value,2)) {
+            $nbItemMap: 1;
+            @each $name, $value in nth($values-resp,$nbTypeResp) {
+                @if($value!=0 and $nbItemMap<=3) {
+                    #{$name}: $value;
+                }
+                $nbItemMap: $nbItemMap+1;
+            }
+            ul { 
+                $nbItemMap: 1;
+                @each $name, $value in nth($values-resp,$nbTypeResp) {
+                    @if($value!="unset" and $nbItemMap>3) {
+                        #{$name}: $value;
+                    }
+                    $nbItemMap: $nbItemMap+1;
+                }
+            }
+        } 
+    }  
+}
+@mixin typography-deg($police:'arial',$color1:black, $color2:grey, $dir:300deg, $weight:null, $size: null) {
+    $attr: "font-family", "background", "font-weight", "font-size";
+    $background: $dir, $color1, $color2;
+    $val: $police, $background, $weight, $size;
+    @for $i from 1 through 4 {
+        @if($val!=null and $i==2) {
+            #{nth($attr,$i)}: -webkit-linear-gradient($dir,$color1,$color2); 
+        } 
+        @else if ($val!=null) {
+            #{nth($attr,$i)}: nth($val,$i); 
+        }
+    }
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@mixin typography($police:'arial', $color:null, $weight:null, $size: 2em) {
+    $attr: "font-family", "color", "font-weight", "font-size";
+    $val: $police, $color, $weight, $size;
+    @for $i from 1 through 4 {
+        @if($val!=null) {
+            #{nth($attr,$i)}: nth($val,$i); 
+        }
+    }
+}
+@mixin img-line-pos($nMenu) {
+    $props: map-get($img-head-section-line,$nMenu);
+    @each $attr, $value in $props {
+        #{$attr}: $value;
+    }
+    @media screen and (max-width: 500px) {
+        width: map-get($props,width) - 10%;
+    }  
 }

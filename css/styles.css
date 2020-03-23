@@ -1,5 +1,19 @@
-/*--------------------------------header, footer and "prochainement" section-----------------------------------------------------------------------------------------------*/
-/*-------------------------------Menu background---------------------------------------------------------------------------------------------------------------------------*/
+.menu-prev__footer, .next, .menu__item ul {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-prev__head-section--a4, .menu-prev__head-section--a3, .menu-prev__head-section--a2, .menu-prev__head-section--a1 {
+  transform: scale(0, 0.5);
+  height: 3px;
+}
+
+.menu-prev__head-section div h3:hover + div {
+  transform: scale(1);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
 body h1 {
   text-align: center;
   margin: 0;
@@ -40,26 +54,30 @@ h1, footer:not(.menu-prev__footer) a {
 }
 
 .menu {
+  display: flex;
+  justify-content: space-around;
   padding: 30px;
 }
 .menu__item {
+  width: 23%;
   position: relative;
   z-index: 1;
   box-shadow: 1px 1px 15px #eaeaea;
 }
 .menu__item ul {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
   list-style-type: none;
   padding-left: 0;
+  height: 70vh;
+  min-height: 300px;
+  font-size: 1.3vw;
 }
 .menu__item ul li {
   transition: transform 0.6s cubic-bezier(0.86, -0.83, 0.07, 1.99);
 }
 .menu__item:hover ul > li {
-  transform: scale(1.1, 1.8);
+  transform: scale(1.1, 1.6);
 }
 .menu__item:hover::after {
   opacity: 1;
@@ -87,119 +105,100 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu__item:nth-child(1) li:nth-child(3) {
   font-family: "Segoe Print Bold";
-  Font-size: 2em;
-}
-.menu__item:nth-child(1) i {
-  font-size: 3em;
-  background: -webkit-linear-gradient(left, #f55f62, #f6916a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2em;
 }
 .menu__item:nth-child(2) {
   background-color: #fff5fe;
 }
 .menu__item:nth-child(2) li:nth-child(1) {
-  background: -webkit-linear-gradient(300deg, #d98330, #8f5aff);
+  font-family: "menu2";
+  background: -webkit-linear-gradient(300deg, #e38a12, #8f5aff);
+  font-size: 0.8em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "menu2";
-  font-size: 0.8em;
 }
 .menu__item:nth-child(2) li:nth-child(2) {
   font-family: "CandidaStdBold";
-  Font-size: 2em;
   color: #c77412;
   font-weight: bolder;
+  font-size: 2em;
 }
 .menu__item:nth-child(3) {
   background-color: #edefef;
 }
 .menu__item:nth-child(3) li:nth-child(1) {
-  background: -webkit-linear-gradient(300deg, #0229dd, #4ea9fb);
+  font-family: "DancingScript-Regular";
+  background: -webkit-linear-gradient(300deg, #0023db, #1a91fb);
+  font-weight: lighter;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "DancingScript-Regular";
-  font-weight: lighter;
 }
 .menu__item:nth-child(3) li:nth-child(2) {
   font-family: "segoeprint";
-  Font-size: 2em;
   color: #0887fb;
   font-weight: bold;
+  font-size: 2em;
 }
 .menu__item:nth-child(4) {
   background-color: #fdfffd;
 }
 .menu__item:nth-child(4) li:nth-child(1) {
-  background: -webkit-linear-gradient(left, #3e923a, #beff7f);
+  font-family: "BreeshLight";
+  background: -webkit-linear-gradient(300deg, #3e923a, #beff7f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "BreeshLight";
 }
 .menu__item:nth-child(4) li:nth-child(2) {
   font-family: "segoeprint";
-  Font-size: 2em;
   color: #72bf56;
   font-weight: lighter;
+  font-size: 2em;
 }
-
-@media screen and (min-width: 1420px) {
+@media screen and (max-width: 1419px) {
   .menu {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    justify-content: center;
   }
   .menu__item {
-    width: 23%;
-  }
-  .menu__item ul {
-    height: 70vh;
-    min-height: 300px;
-    font-size: 1.3vw;
+    width: 100%;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1419px) {
   .menu {
-    display: grid;
     grid-template-columns: 38% 38%;
     grid-column-gap: 3vw;
     grid-row-gap: 3vh;
-    justify-content: center;
   }
-  .menu__item ul {
+  .menu ul {
     height: 70vh;
     font-size: 2vw;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 1023px) {
   .menu {
-    display: grid;
     grid-template-columns: 45vw 45vw;
     grid-column-gap: 3vw;
     grid-row-gap: 3vh;
-    justify-content: center;
   }
-  .menu__item ul {
+  .menu ul {
     height: 50vh;
-    font-size: 3vw;
     min-height: 400px;
+    font-size: 3vw;
   }
 }
-@media screen and (max-width: 599px) {
+@media screen and (min-width: 0px) and (max-width: 599px) {
   .menu {
-    display: grid;
     grid-template-columns: 80vw;
-    grid-row-gap: 8vw;
-    justify-content: center;
+    grid-row-gap: 5vw;
   }
-  .menu__item ul {
+  .menu ul {
     height: 60vh;
     font-size: 5vw;
   }
 }
+
 .next {
   margin-bottom: 100px;
-  display: flex;
-  justify-content: center;
 }
 .next__btn {
   display: flex;
@@ -211,7 +210,6 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .next__btn h2 {
   font-size: 1.3em;
-  color: #fdcb46;
 }
 .next__btn--animPoint {
   font-size: 0.3em;
@@ -236,7 +234,7 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu1 section {
   margin-bottom: 50px;
-  font-family: segoeprint;
+  font-family: "segoeprint";
   font-size: 0.9em;
 }
 .menu-prev__header--m1 img {
@@ -246,9 +244,9 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev__header--m1 h2 {
   font-family: "Dear Joe 6";
-  margin-bottom: 30px;
-  font-size: 1.5em;
   font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 30px;
 }
 .menu-prev__head-section--m1 img {
   width: 35%;
@@ -261,15 +259,12 @@ h1, footer:not(.menu-prev__footer) a {
   }
 }
 .menu-prev__head-section--m1 h3 {
-  font-family: segoeprint;
+  font-family: "segoeprint";
+  font-weight: bold;
   font-size: 1.35em;
 }
 .menu-prev__head-section--m1 h3:hover + div {
   background-color: #3d1319;
-}
-.menu-prev__head-section--a1 {
-  transform: scale(0.2, 0.5);
-  height: 3px;
 }
 .menu-prev__content--m1 {
   width: 100%;
@@ -281,8 +276,6 @@ h1, footer:not(.menu-prev__footer) a {
   font-weight: bold;
 }
 .menu-prev__footer {
-  display: flex;
-  justify-content: center;
   font-family: "Dear Joe 6";
   font-weight: bold;
   font-size: 1.2em;
@@ -301,7 +294,7 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu2 section {
   margin-bottom: 50px;
-  font-family: DecaSerif;
+  font-family: "DecaSerif";
   font-size: 0.9em;
 }
 .menu-prev--menu2 section:nth-of-type(1) {
@@ -326,12 +319,11 @@ h1, footer:not(.menu-prev__footer) a {
   text-align: left;
 }
 .menu-prev__header--m2 h2 {
+  margin-bottom: 80px;
+  font-family: "menu2";
   background: -webkit-linear-gradient(300deg, #d98330, #8f5aff);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "menu2";
-  margin-bottom: 8vh;
 }
 .menu-prev__head-section--m2 {
   margin-bottom: 15px;
@@ -339,17 +331,12 @@ h1, footer:not(.menu-prev__footer) a {
 .menu-prev__head-section--m2 img {
   width: 30%;
   height: 12px;
-  position: relative;
   top: 6px;
 }
 @media screen and (max-width: 500px) {
   .menu-prev__head-section--m2 img {
-    top: 15px;
+    width: 20%;
   }
-}
-.menu-prev__head-section--a2 {
-  transform: scale(0.2, 0.5);
-  height: 3px;
 }
 .menu-prev__content--m2 {
   width: 81%;
@@ -376,7 +363,8 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu3 section {
   margin-bottom: 20px;
-  font-family: segoeprint;
+  font-family: "segoeprint";
+  color: black;
   font-size: 0.76em;
 }
 .menu-prev--menu3 section:nth-of-type(1) h3:hover + div {
@@ -392,13 +380,12 @@ h1, footer:not(.menu-prev__footer) a {
   font-weight: normal;
 }
 .menu-prev__header--m3 h2 {
+  font-family: "DancingScript-Regular";
   background: -webkit-linear-gradient(300deg, #0229dd, #4ea9fb);
-  background-clip: text;
+  font-size: 3.5em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "DancingScript-Regular";
   margin-bottom: 8vh;
-  font-size: 3.5em;
 }
 @media screen and (max-width: 500px) {
   .menu-prev__header--m3 h2 {
@@ -411,17 +398,12 @@ h1, footer:not(.menu-prev__footer) a {
 .menu-prev__head-section--m3 img {
   width: 33%;
   height: 12px;
-  position: relative;
   top: 7px;
 }
 @media screen and (max-width: 500px) {
   .menu-prev__head-section--m3 img {
-    top: 15px;
+    width: 23%;
   }
-}
-.menu-prev__head-section--a3 {
-  transform: scale(0, 0.5);
-  height: 4px;
 }
 .menu-prev__content--m3 {
   width: 82%;
@@ -438,9 +420,6 @@ h1, footer:not(.menu-prev__footer) a {
 .menu-prev__content--m3 tr td:nth-child(even) {
   font-size: 1.2em;
 }
-.menu-prev__content--m3 tr td:nth-child(even) li:nth-child(2) {
-  padding: 2px 0;
-}
 
 .menu-prev--menu4 {
   background-color: #fdfffd;
@@ -448,18 +427,17 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev--menu4 section {
   margin-bottom: 30px;
-  font-family: segoeprint;
+  font-family: "segoeprint";
+  color: black;
   font-size: 0.73em;
 }
 .menu-prev__header--m4 h2 {
-  background: -webkit-linear-gradient(left, #3e923a, #beff7f);
-  background-clip: text;
+  font-family: "BreeshLight";
+  background: -webkit-linear-gradient(300deg, #3e923a, #beff7f);
+  font-size: 3em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "BreeshLight";
-  font-size: 1.8em;
   margin-bottom: 5vh;
-  font-size: 3em;
 }
 @media screen and (max-width: 500px) {
   .menu-prev__header--m4 h2 {
@@ -472,7 +450,6 @@ h1, footer:not(.menu-prev__footer) a {
 .menu-prev__head-section--m4 img {
   width: 35%;
   height: 10px;
-  position: relative;
   top: 10px;
 }
 @media screen and (max-width: 500px) {
@@ -486,10 +463,6 @@ h1, footer:not(.menu-prev__footer) a {
 .menu-prev__head-section--m4 h3:hover + div {
   background-color: #dbfdbc;
 }
-.menu-prev__head-section--a4 {
-  transform: scale(0.2, 0.5);
-  height: 5px;
-}
 .menu-prev__content--m4 {
   width: 83%;
   margin: auto;
@@ -499,9 +472,6 @@ h1, footer:not(.menu-prev__footer) a {
 }
 .menu-prev__content--m4 tr td:nth-child(even) {
   font-size: 1.2em;
-}
-.menu-prev__content--m4 tr td:nth-child(even) li:nth-child(2) {
-  padding: 3px 0;
 }
 
 @font-face {
@@ -622,12 +592,6 @@ body h1 a:visited {
 }
 .menu-prev__head-section div h3 {
   margin: 0;
-}
-.menu-prev__head-section div h3:hover + div {
-  position: relative;
-  transform: scale(1);
-  transform-origin: left;
-  transition: transform 0.5s ease-in-out;
 }
 @media screen and (min-width: 500px) {
   .menu-prev {

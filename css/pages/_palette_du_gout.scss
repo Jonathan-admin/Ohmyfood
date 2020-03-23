@@ -4,47 +4,33 @@
         padding: 4vh 1vw 10vh 1vw;
         section {
             margin-bottom: 30px;
-            font-family: segoeprint;
-            font-size: 0.73em;
+            @include typography('segoeprint',$text-menu4-color,null,0.73em);
         }
     }
     &__header--m4 {
         h2 {
-            background: -webkit-linear-gradient(left, rgb(62,146,58),rgb(190,255,127));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-family: 'BreeshLight';
-            font-size: 1.8em;
+            @include typography-deg('BreeshLight',nth($text-colors-menu4,1),nth($text-colors-menu4,2),300deg,null,3em); 
             margin-bottom: 5vh;
-            font-size: 3em;
             @media screen and (max-width: 500px) {
                 font-size: 2em;
-            }
+            }  
         }
     }
     &__head-section {
         &--m4 {
             margin-bottom: 15px;
             img {
-                width: 35%;
-                height: 10px;
-                position: relative;
-                top: 10px;
-                @media screen and (max-width: 500px) {
-                    width: 25%;
-                }
+                @include img-line-pos(menu4);  
             }
             h3 {
                 font-weight: unset;
                 &:hover + div{
-                    background-color: rgb(219,253,188);    
+                    background-color: $line-menu4-color;    
                 }
             }
         }
         &--a4 {
-            transform: scale(0.2,0.5);
-            height: 5px;
+            @extend %anim-line-start;
         }
     }
     &__content--m4 { 
@@ -55,9 +41,6 @@
                 padding: 6px 0;    
                 &:nth-child(even) {
                     font-size: 1.2em;
-                    & li:nth-child(2) {
-                        padding: 3px 0;
-                    }
                 }
             }
         }
