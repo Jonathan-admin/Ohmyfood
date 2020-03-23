@@ -1,0 +1,132 @@
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    &__item {
+        width: 23%;
+        position: relative;
+        z-index: 1;
+        box-shadow: 1px 1px 15px $menu-shadow;
+        ul {
+            @extend %flex-center;
+            flex-direction: column;
+            text-align: center;
+            list-style-type: none;
+            padding-left: 0; 
+            height: 70vh;
+            min-height: 300px;
+            font-size: 1.3vw;
+            li {
+                transition: transform 0.6s cubic-bezier(.86,-0.83,.07,1.99);
+            }     
+        }
+        &:hover {
+            ul>li {
+                transform: scale(1.1,1.6);
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.685);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 0.5s cubic-bezier(1,.05,.36,1);
+        }
+        &:nth-child(1) {
+            background:$background-menu1-color;
+            li {
+                color: $text-menu1-color;
+                &:nth-child(2) {
+                    @include typography('Dear Joe 6',null,null,null);
+                }
+                &:nth-child(3) {
+                    @include typography('Segoe Print Bold');
+                }
+            }
+        }            
+        &:nth-child(2) {
+            background-color: $background-menu2-color;
+            li {
+                &:nth-child(1) {
+                    @include typography-deg('menu2',nth($text-colors-menu2,1),nth($text-colors-menu2,2),300deg,null,0.8em); 
+                }
+                &:nth-child(2) {
+                    @include typography('CandidaStdBold', nth($text-colors-menu2,3), bolder);
+                }
+            }
+        }
+        &:nth-child(3) {
+            background-color: $background-menu3-color;
+            li {
+                &:nth-child(1) {
+                    @include typography-deg('DancingScript-Regular',nth($text-colors-menu3,1),nth($text-colors-menu3,2),300deg,lighter,null); 
+                }
+                &:nth-child(2) {
+                    @include typography('segoeprint',nth($text-colors-menu3,3),bold,2em); 
+                    
+                }
+            }
+        }
+        &:nth-child(4) {
+            background-color: $background-menu4-color;
+            li {
+                &:nth-child(1) {
+                    @include typography-deg('BreeshLight',nth($text-colors-menu4,1),nth($text-colors-menu4,2),300deg,null,null);  
+                }
+                &:nth-child(2) {
+                    @include typography('segoeprint', nth($text-colors-menu4,3), lighter);
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1419px) {
+        display: grid;
+        justify-content: center;
+        &__item {
+            width: 100%;
+        }
+    }
+    @include index-responsive();
+}
+
+.next {
+    margin-bottom: 100px;
+    @extend %flex-center;
+    &__btn {
+        display: flex;
+        align-items: baseline;
+        background-color: $background-color;
+        color: $text-color;
+        border-radius: 10px;
+        padding: 0 30px;
+        h2 {
+            font-size: 1.3em; 
+        }
+        &--animPoint {
+            font-size: 0.3em;
+            i {
+                margin-left: 3px;
+                &:nth-child(1) {
+                    animation: animation-point 0.6s 0s infinite cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                }
+                &:nth-child(2) {
+                    animation: animation-point 0.6s 150ms infinite cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                }
+                &:nth-child(3) {
+                    animation: animation-point 0.6s 0s infinite cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                } 
+            }
+        }
+    }
+}
+
+
+

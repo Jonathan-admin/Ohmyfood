@@ -1,0 +1,63 @@
+.menu-prev {
+    &--menu3 {
+        background-color: $background-menu3-color;
+        padding: 4vh 2vw 15vh 2vw;
+        section {
+            margin-bottom: 20px;
+            @include typography('segoeprint',$text-menu3-color,null,0.76em);
+            &:nth-of-type(1) {
+                h3:hover + div {
+                    background: nth($line-menu3-color-parts,1);    
+                }
+            }
+            &:nth-of-type(2) {
+                h3:hover + div {
+                    background:nth($line-menu3-color-parts,2); 
+                }
+            }
+            &:nth-of-type(3) {
+                h3:hover + div {
+                    background:nth($line-menu3-color-parts,3); 
+                }
+            }
+            h3 {
+                font-weight: normal;
+            }
+        }
+    }
+    &__header--m3 {
+        h2 {
+            @include typography-deg('DancingScript-Regular',nth($title-menu3-degrColors,1),nth($title-menu3-degrColors,2),300deg,null,3.5em);            
+            margin-bottom: 8vh;
+            @media screen and (max-width: 500px) {
+                font-size: 2.5em;
+            }
+        }
+    }
+    &__head-section {
+        &--m3 {
+            margin-bottom: 12px;
+            img {
+                @include img-line-pos(menu3);  
+            }
+        }
+        &--a3 {
+            @extend %anim-line-start;
+        }
+    }
+    &__content--m3 { 
+        width: 82%;
+        margin: auto;
+        @media screen and (max-width: 500px) {
+            width: 95%;
+        }
+        tr {
+            td {
+                padding: 6px 0;
+                &:nth-child(even) {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.menu-prev {
+    text-align: center;
+    box-shadow: 1px 1px 15px rgb(234,234,234);
+    &__content { 
+        table-layout: auto;
+        tr {
+            td {
+                &:nth-child(1) {
+                    text-align: left;
+                }
+                &:nth-child(2) {
+                    text-align: right;
+                }
+            }
+        }
+    }
+    &__head-section {
+        display: flex;
+        justify-content: space-between;
+        img {
+            position: relative;
+        }
+        div {
+            h3 {
+                margin: 0;
+                &:hover + div {
+                    @extend %anim-line-stop;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 500px) {
+        width: 30%;
+        min-width: 560px;
+        margin: auto;
+    }
+    @media screen and (max-width: 500px) {
+        padding: 30px 15px;
+    }
+}
+
+
+

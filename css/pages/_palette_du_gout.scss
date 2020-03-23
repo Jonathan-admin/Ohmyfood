@@ -1,0 +1,48 @@
+.menu-prev {
+    &--menu4 {
+        background-color: $background-menu4-color;
+        padding: 4vh 1vw 10vh 1vw;
+        section {
+            margin-bottom: 30px;
+            @include typography('segoeprint',$text-menu4-color,null,0.73em);
+        }
+    }
+    &__header--m4 {
+        h2 {
+            @include typography-deg('BreeshLight',nth($text-colors-menu4,1),nth($text-colors-menu4,2),300deg,null,3em); 
+            margin-bottom: 5vh;
+            @media screen and (max-width: 500px) {
+                font-size: 2em;
+            }  
+        }
+    }
+    &__head-section {
+        &--m4 {
+            margin-bottom: 15px;
+            img {
+                @include img-line-pos(menu4);  
+            }
+            h3 {
+                font-weight: unset;
+                &:hover + div{
+                    background-color: $line-menu4-color;    
+                }
+            }
+        }
+        &--a4 {
+            @extend %anim-line-start;
+        }
+    }
+    &__content--m4 { 
+        width: 83%;
+        margin: auto;
+        tr {
+            td {
+                padding: 6px 0;    
+                &:nth-child(even) {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}

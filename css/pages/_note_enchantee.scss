@@ -1,0 +1,60 @@
+.menu-prev {
+    &--menu1 {
+        background: $background-menu1-color;
+        @include typography(null,$text-menu1-color,null,null);
+        padding: 50px 40px;
+        section {
+            margin-bottom: 50px;
+            @include typography('segoeprint',null,null,0.9em);
+        }
+    }
+    &__header--m1 {
+        img {
+            width: 10%;
+            margin: auto;
+            height: auto;
+        }
+        h2 {
+            @include typography('Dear Joe 6',null,bold,1.5em);
+            margin-bottom: 30px;
+        }
+    }
+    &__head-section {
+        &--m1 {
+            img {
+                @include img-line-pos(menu1);  
+            }
+            h3 {
+                @include typography('segoeprint',null,bold,1.35em);
+                &:hover + div{
+                    background-color: $text-menu1-color;    
+                }
+            }
+        } 
+        &--a1 {
+            @extend %anim-line-start;
+        }
+    }
+    &__content--m1 { 
+        width: 100%;
+        tr {
+            td {
+                padding: 4px 0;
+                &:nth-child(even) {
+                    font-weight: bold; 
+                }
+            }
+        }
+    }
+    &__footer {
+        @extend %flex-center;
+        @include typography('Dear Joe 6',null,bold,1.2em);
+        img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            position: relative;
+            top: 12px;
+        }
+    }
+}
