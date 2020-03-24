@@ -28,6 +28,9 @@ body {
                 animation: wiggle-effect 0.5s infinite;
             }
         } 
+        @media screen and (max-width: 500px) {
+            font-size: 1.3em;
+        }
     }
 }
 
