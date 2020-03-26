@@ -1,4 +1,4 @@
-.menu-prev__footer, .next, .menu__item ul {
+.menu-prev__footer, .next, .menu__item div {
   display: flex;
   justify-content: center;
 }
@@ -17,7 +17,7 @@
 body h1 {
   text-align: center;
   margin: 0;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 body main {
   margin-bottom: 80px;
@@ -30,7 +30,6 @@ body main > h2 {
 }
 body footer:not(.menu-prev__footer) {
   position: fixed;
-  width: 100%;
   font-size: 1.5em;
   display: flex;
   justify-content: space-between;
@@ -46,12 +45,13 @@ body footer:not(.menu-prev__footer) a:hover {
 }
 @media screen and (max-width: 500px) {
   body footer:not(.menu-prev__footer) {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 }
 
 body > header, footer:not(.menu-prev__footer) {
   background-color: #4e9c87;
+  width: 100%;
 }
 
 h1, footer:not(.menu-prev__footer) a {
@@ -69,20 +69,26 @@ h1, footer:not(.menu-prev__footer) a {
   z-index: 1;
   box-shadow: 1px 1px 15px #eaeaea;
 }
-.menu__item ul {
+.menu__item div {
   flex-direction: column;
   text-align: center;
   list-style-type: none;
   padding-left: 0;
   height: 70vh;
-  min-height: 300px;
+  min-height: 450px;
   font-size: 1.3vw;
-}
-.menu__item ul li {
   transition: transform 0.6s cubic-bezier(0.86, -0.83, 0.07, 1.99);
 }
-.menu__item:hover ul > li {
-  transform: scale(1.1, 1.6);
+.menu__item div img {
+  width: 25%;
+  height: auto;
+  margin: 0 auto;
+}
+.menu__item div h2, .menu__item div p {
+  margin: 0;
+}
+.menu__item:hover div {
+  transform: scale(1.1, 1.5);
 }
 .menu__item:hover::after {
   opacity: 1;
@@ -102,27 +108,28 @@ h1, footer:not(.menu-prev__footer) a {
 .menu__item:nth-child(1) {
   background: #fcdfdb;
 }
-.menu__item:nth-child(1) li {
+.menu__item:nth-child(1) div {
   color: #3d1319;
 }
-.menu__item:nth-child(1) li:nth-child(2) {
+.menu__item:nth-child(1) div h2 {
   font-family: "Dear Joe 6";
 }
-.menu__item:nth-child(1) li:nth-child(3) {
+.menu__item:nth-child(1) div p {
   font-family: "Segoe Print Bold";
   font-size: 2em;
 }
 .menu__item:nth-child(2) {
   background-color: #fff5fe;
 }
-.menu__item:nth-child(2) li:nth-child(1) {
+.menu__item:nth-child(2) div h2 {
   font-family: "menu2";
   background: -webkit-linear-gradient(300deg, #e38a12, #8f5aff);
-  font-size: 0.8em;
+  font-size: 1.1em;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 20px;
 }
-.menu__item:nth-child(2) li:nth-child(2) {
+.menu__item:nth-child(2) div p {
   font-family: "CandidaStdBold";
   color: #c77412;
   font-weight: bolder;
@@ -131,14 +138,15 @@ h1, footer:not(.menu-prev__footer) a {
 .menu__item:nth-child(3) {
   background-color: #edefef;
 }
-.menu__item:nth-child(3) li:nth-child(1) {
+.menu__item:nth-child(3) div h2 {
   font-family: "DancingScript-Regular";
   background: -webkit-linear-gradient(300deg, #0023db, #1a91fb);
-  font-weight: lighter;
+  font-weight: bold;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 15px;
 }
-.menu__item:nth-child(3) li:nth-child(2) {
+.menu__item:nth-child(3) div p {
   font-family: "segoeprint";
   color: #0887fb;
   font-weight: bold;
@@ -147,13 +155,13 @@ h1, footer:not(.menu-prev__footer) a {
 .menu__item:nth-child(4) {
   background-color: #fdfffd;
 }
-.menu__item:nth-child(4) li:nth-child(1) {
+.menu__item:nth-child(4) div h2 {
   font-family: "BreeshLight";
   background: -webkit-linear-gradient(300deg, #3e923a, #beff7f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.menu__item:nth-child(4) li:nth-child(2) {
+.menu__item:nth-child(4) div p {
   font-family: "segoeprint";
   color: #72bf56;
   font-weight: lighter;
@@ -174,7 +182,7 @@ h1, footer:not(.menu-prev__footer) a {
     grid-column-gap: 3vw;
     grid-row-gap: 3vh;
   }
-  .menu ul {
+  .menu div {
     height: 70vh;
     font-size: 2vw;
   }
@@ -185,7 +193,7 @@ h1, footer:not(.menu-prev__footer) a {
     grid-column-gap: 3vw;
     grid-row-gap: 3vh;
   }
-  .menu ul {
+  .menu div {
     height: 50vh;
     min-height: 400px;
     font-size: 3vw;
@@ -196,7 +204,7 @@ h1, footer:not(.menu-prev__footer) a {
     grid-template-columns: 80vw;
     grid-row-gap: 5vw;
   }
-  .menu ul {
+  .menu div {
     height: 60vh;
     font-size: 5vw;
   }
@@ -606,7 +614,7 @@ body h1 a:visited {
     margin: auto;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .menu-prev {
     padding: 30px 15px;
   }

@@ -7,22 +7,28 @@
         position: relative;
         z-index: 1;
         box-shadow: 1px 1px 15px $menu-shadow;
-        ul {
+        div {
             @extend %flex-center;
+            img {
+                width: 25%;
+                height: auto;
+                margin: 0 auto;
+            }
+            h2, p {
+                margin: 0;
+            }
             flex-direction: column;
             text-align: center;
             list-style-type: none;
             padding-left: 0; 
             height: 70vh;
-            min-height: 300px;
+            min-height: 450px;
             font-size: 1.3vw;
-            li {
-                transition: transform 0.6s cubic-bezier(.86,-0.83,.07,1.99);
-            }     
+            transition: transform 0.6s cubic-bezier(.86,-0.83,.07,1.99);      
         }
         &:hover {
-            ul>li {
-                transform: scale(1.1,1.6);
+            div {
+                transform: scale(1.1,1.5);
             }
             &::after {
                 opacity: 1;
@@ -42,46 +48,47 @@
         }
         &:nth-child(1) {
             background:$background-menu1-color;
-            li {
+            div {
                 color: $text-menu1-color;
-                &:nth-child(2) {
+                h2 {
                     @include typography('Dear Joe 6',null,null,null);
                 }
-                &:nth-child(3) {
+                p {
                     @include typography('Segoe Print Bold');
                 }
             }
         }            
         &:nth-child(2) {
             background-color: $background-menu2-color;
-            li {
-                &:nth-child(1) {
-                    @include typography-deg('menu2',nth($text-colors-menu2,1),nth($text-colors-menu2,2),300deg,null,0.8em); 
+            div {
+                h2 {
+                    @include typography-deg('menu2',nth($text-colors-menu2,1),nth($text-colors-menu2,2),300deg,null,1.1em); 
+                    padding-bottom: 20px;
                 }
-                &:nth-child(2) {
+                p {
                     @include typography('CandidaStdBold', nth($text-colors-menu2,3), bolder);
                 }
             }
         }
         &:nth-child(3) {
             background-color: $background-menu3-color;
-            li {
-                &:nth-child(1) {
-                    @include typography-deg('DancingScript-Regular',nth($text-colors-menu3,1),nth($text-colors-menu3,2),300deg,lighter,null); 
+            div {
+                h2 {
+                    @include typography-deg('DancingScript-Regular',nth($text-colors-menu3,1),nth($text-colors-menu3,2),300deg,bold,null); 
+                    padding-bottom: 15px;
                 }
-                &:nth-child(2) {
-                    @include typography('segoeprint',nth($text-colors-menu3,3),bold,2em); 
-                    
+                p {
+                    @include typography('segoeprint',nth($text-colors-menu3,3),bold,2em);    
                 }
             }
         }
         &:nth-child(4) {
             background-color: $background-menu4-color;
-            li {
-                &:nth-child(1) {
+            div {
+                h2 {
                     @include typography-deg('BreeshLight',nth($text-colors-menu4,1),nth($text-colors-menu4,2),300deg,null,null);  
                 }
-                &:nth-child(2) {
+                p {
                     @include typography('segoeprint', nth($text-colors-menu4,3), lighter);
                 }
             }
