@@ -11,7 +11,7 @@
                 }
                 $nbItemMap: $nbItemMap+1;
             }
-            ul { 
+            div { 
                 $nbItemMap: 1;
                 @each $name, $value in nth($values-resp,$nbTypeResp) {
                     @if($value!="unset" and $nbItemMap>3) {
@@ -23,7 +23,8 @@
         } 
     }  
 }
-@mixin typography-deg($police:'arial',$color1:black, $color2:grey, $dir:300deg, $weight:null, $size: null) {
+@mixin typography-deg($police:'arial',$color1:black, $color2:grey, 
+$dir:300deg, $weight:null, $size: null) {
     $attr: "font-family", "background", "font-weight", "font-size";
     $background: $dir, $color1, $color2;
     $val: $police, $background, $weight, $size;
